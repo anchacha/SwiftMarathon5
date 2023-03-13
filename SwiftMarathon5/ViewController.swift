@@ -11,23 +11,23 @@ class ViewController: UIViewController {
     
     @IBOutlet var presentButton: UIButton!
     
-    private lazy var popoverController = SecondController()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        self.popoverController.modalPresentationStyle = .popover
     }
     
     
     @IBAction func presentAction(_ sender: UIButton) {
-        if self.popoverController.popoverPresentationController?.presentingViewController == nil {
-            let popoverPresentationController = self.popoverController.popoverPresentationController
+        let popoverController = SecondController()
+        popoverController.modalPresentationStyle = .popover
+
+        if popoverController.popoverPresentationController?.presentingViewController == nil {
+            let popoverPresentationController = popoverController.popoverPresentationController
             popoverPresentationController?.delegate = self
             popoverPresentationController?.permittedArrowDirections = .up
             popoverPresentationController?.sourceView = sender
             
-            self.present(self.popoverController, animated: true)
+            self.present(popoverController, animated: true)
         }
     }
 }
