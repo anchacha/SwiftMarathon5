@@ -27,7 +27,7 @@ class ViewController: UIViewController {
             popoverPresentationController?.permittedArrowDirections = .up
             popoverPresentationController?.sourceView = sender
             
-            self.present(self.popoverController, animated: false)
+            self.present(self.popoverController, animated: true)
         }
     }
 }
