@@ -75,10 +75,6 @@ class SecondController: UIViewController {
         self.closeButton.setImage(UIImage(systemName: "cross"), for: .normal)
     }
     
-    private func configureSegmentio() {
-        //        self.segmentView.
-    }
-    
     private func constraints() {
         self.view.addConstraints([
             .init(item: self.segmentView, attribute: .top, relatedBy: .equal, toItem: self.view, attribute: .top, multiplier: 1, constant: 32),
